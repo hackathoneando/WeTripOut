@@ -1,14 +1,29 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'trip.dart';
+
 class User {
   int id;
-  String email;
-  String password;
+  String name;
+  DateTime bornDate;
+  FirebaseUser firebaseUser;
+  List<User> friends;
+  List<Trip> trips;
 
-
-  User.connect({this.email, this.password}) {
+  User.connect({this.firebaseUser}) {
+    List<DocumentSnapshot> documents;
+    Firestore.instance
+        .collection('users')
+        .where('email', isEqualTo: firebaseUser.email)
+        .getDocuments()
+        .then((value) => documents = value.documents);
+    
     //TODO download user data from firebase
   }
 
-  User.create({String email, String password}) {
-
+  User.create({email, password, this.bornDate, this.name}) {
+    FirebaseAuth.instance
+        .createUserWithEmailAndPassword(email: email, password: password)
+        .then((value) => this.firebaseUser = value);
   }
 }
