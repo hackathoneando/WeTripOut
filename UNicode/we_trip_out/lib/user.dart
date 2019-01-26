@@ -17,7 +17,7 @@ class User {
         .where('email', isEqualTo: firebaseUser.email)
         .getDocuments()
         .then((value) => documents = value.documents);
-    
+
     //TODO download user data from firebase
   }
 
