@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget{
+  HomeScreen({Key key}) : super(key: key);
+
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   final topBar = new AppBar(
     backgroundColor: new Color(0xff559AAF),
     elevation: 3.5,
