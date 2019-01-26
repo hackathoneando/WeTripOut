@@ -315,8 +315,7 @@ class _LoginPageState extends State<LoginPage>
                       tileMode: TileMode.clamp),
                 ),
                 child: MaterialButton(
-                    highlightColor: Colors.transparent,
-                    splashColor: Theme.Colors.loginGradientEnd,
+                    color: Color(0xFF559AAF),
                     //shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5.0))),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
@@ -613,8 +612,7 @@ class _LoginPageState extends State<LoginPage>
                       tileMode: TileMode.clamp),
                 ),
                 child: MaterialButton(
-                    highlightColor: Colors.transparent,
-                    splashColor: Theme.Colors.loginGradientEnd,
+                    color: Color(0xFF559AAF),
                     //shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5.0))),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(

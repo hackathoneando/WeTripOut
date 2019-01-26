@@ -54,12 +54,12 @@ flutter:
   fonts:
     - family: WorkSansSemiBold
       fonts:
-        - asset: assets/fonts/Work_Sans/WorkSans-SemiBold.ttf
+        - asset: assets/font/Work_Sans/WorkSans-SemiBold.ttf
 
     - family: WorkSansBold
       fonts:
-        - asset: assets/fonts/Work_Sans/WorkSans-Bold.ttf
+        - asset: assets/font/Work_Sans/WorkSans-Bold.ttf
 
     - family: WorkSansMedium
       fonts:
-        - asset: assets/fonts/Work_Sans/WorkSans-Medium.ttf
+        - asset: assets/font/Work_Sans/WorkSans-Medium.ttf
