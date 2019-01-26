@@ -13,12 +13,21 @@ class _HomeScreenState extends State<HomeScreen> {
     elevation: 3.5,
   );
 
+  int _selectedIndex = 0;
+  final _widgetOptions = [
+    Text('Index 0: My trips'),
+    Text('Index 1: Recommended'),
+    Text('Index 2: Home'),
+    Text('Index 3: Notifications'),
+    Text('Index 4: Profile'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: topBar,
         body: Center(
-          child: Text('Hello World'),
+          child: _widgetOptions.elementAt(_selectedIndex),
         ),
         bottomNavigationBar: new Container(
           color: Colors.white,
@@ -33,35 +42,35 @@ class _HomeScreenState extends State<HomeScreen> {
                     Icons.navigation,
                     color: Color(0xff828282),
                   ),
-                  onPressed: () {},
+                  onPressed: () { setState(() { _selectedIndex = 0; }); },
                 ),
                 new IconButton(
                   icon: Icon(
                     Icons.whatshot,
                     color: Color(0xff828282),
                   ),
-                  onPressed: () {},
+                  onPressed: () { setState(() { _selectedIndex = 1; }); },
                 ),
                 new IconButton(
                   icon: Icon(
                     Icons.home,
                     color: Color(0xff828282),
                   ),
-                  onPressed: () {},
+                  onPressed: () { setState(() { _selectedIndex = 2; }); },
                 ),
                 new IconButton(
                   icon: Icon(
                     Icons.notifications,
                     color: Color(0xff828282),
                   ),
-                  onPressed: () {},
+                  onPressed: () { setState(() { _selectedIndex = 3; }); },
                 ),
                 new IconButton(
                   icon: Icon(
                     Icons.account_circle,
                     color: Color(0xff828282),
                   ),
-                  onPressed: () {},
+                  onPressed: () { setState(() { _selectedIndex = 4; }); },
                 ),
               ],
             ),
