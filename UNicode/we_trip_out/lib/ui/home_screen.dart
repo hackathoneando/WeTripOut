@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final _widgetOptions = [
     Text('Index 0: My Trips'),
     Text('Index 1: Recommended'),
-    new HomeBody(),
+    new HomeList(),
     Text('Index 3: Notifications'),
     Text('Index 4: Profile'),
   ];

@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class HomeBody extends StatefulWidget{
+class HomeList extends StatefulWidget{
   @override
-  State<StatefulWidget> createState() => _HomeBodyState();
+  State<StatefulWidget> createState() => _HomeListState();
 }
 
-class _HomeBodyState extends State<HomeBody>{
+class _HomeListState extends State<HomeList>{
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: EdgeInsets.all(0.0),
-      itemExtent: 200.0,
+      itemExtent: 151.0,
       itemBuilder: (BuildContext context, int index) {
-        var card = new MyStatelessWidget();
+        var card = new CardList();
         //card.setIndex(index);
         return card;
       },
@@ -22,8 +21,17 @@ class _HomeBodyState extends State<HomeBody>{
 
 }
 
-class MyStatelessWidget extends StatelessWidget {
-  MyStatelessWidget({Key key}) : super(key: key);
+class CardList extends StatefulWidget{
+  @override
+  _CardListState createState() => _CardListState();
+  }
+
+class _CardListState extends State<CardList> {
+
+  int likes = 0;
+  int comments = 0;
+  String name = 'Santiago Velandia Casas';
+  String message = 'Is there someone interested in traveling to Madrid soon?';
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +49,7 @@ class MyStatelessWidget extends StatelessWidget {
                   ),
                   Container(
                     child: Text(
-                      'Santiago Velandia Casas',
+                      '$name',
                       style: TextStyle(
                           fontSize: 15,
                           fontFamily: "RobotoBold"
@@ -53,11 +61,39 @@ class MyStatelessWidget extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.fromLTRB(13, 5, 5, 13),
-              child: Text("Is there someone interested in traveling to Madrid soon?"),
+              child: Text("$message"),
             ),
             Container(
               child: Row(
-                
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.favorite,
+                        color: Color(0xff828282),
+                      ),
+                      onPressed: () { setState(() {likes+=1;});},
+                    ),
+                  ),
+                  Text(
+                    '$likes Travelikes!',
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
+                    child: new IconButton(
+                      icon: Icon(
+                        Icons.comment,
+                        color: Color(0xff828282),
+                      ),
+                      onPressed: () { setState(() {comments+=1;});},
+                    ),
+                  ),
+
+                  Text(
+                    '$comments Comments',
+                  ),
+                ],
               ),
             )
           ],
