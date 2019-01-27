@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'home_list_screen.dart';
+import 'package:we_trip_out/ui/home/home_list_screen.dart';
+import 'package:we_trip_out/ui/profile/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget{
   HomeScreen({Key key}) : super(key: key);
@@ -14,13 +15,13 @@ class _HomeScreenState extends State<HomeScreen> {
     elevation: 3.5,
   );
 
-  int _selectedIndex = 0;
+  int _selectedIndex = 2;
   final _widgetOptions = [
     Text('Index 0: My Trips'),
-    Text('Index 1: Recommended'),
+    new HomeList(),
     new HomeList(),
     Text('Index 3: Notifications'),
-    Text('Index 4: Profile'),
+    ProfileScreen(),
   ];
 
   @override

@@ -45,7 +45,6 @@ class _CardListState extends State<CardList> {
                 children: <Widget>[
                   Container(
                     child: Icon(Icons.account_circle, size: 35,),
-                    padding: EdgeInsets.fromLTRB(10, 5, 5, 5),
                   ),
                   Container(
                     child: Text(
@@ -60,14 +59,12 @@ class _CardListState extends State<CardList> {
               )
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(13, 5, 5, 13),
               child: Text("$message"),
             ),
             Container(
               child: Row(
                 children: <Widget>[
                   Container(
-                    padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                     child: IconButton(
                       icon: Icon(
                         Icons.favorite,
@@ -80,7 +77,6 @@ class _CardListState extends State<CardList> {
                     '$likes Travelikes!',
                   ),
                   Container(
-                    padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
                     child: new IconButton(
                       icon: Icon(
                         Icons.comment,
