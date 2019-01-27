@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home_list_screen.dart';
 
 class HomeScreen extends StatefulWidget{
   HomeScreen({Key key}) : super(key: key);
@@ -15,9 +16,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   int _selectedIndex = 0;
   final _widgetOptions = [
-    Text('Index 0: My trips'),
+    Text('Index 0: My Trips'),
     Text('Index 1: Recommended'),
-    Text('Index 2: Home'),
+    new HomeList(),
     Text('Index 3: Notifications'),
     Text('Index 4: Profile'),
   ];

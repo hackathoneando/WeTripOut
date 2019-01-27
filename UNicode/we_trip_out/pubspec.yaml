@@ -66,3 +66,11 @@ flutter:
     - family: WorkSansMedium
       fonts:
         - asset: assets/font/Work_Sans/WorkSans-Medium.ttf
+
+    - family: RobotoBold
+      fonts:
+        - asset: assets/font/Roboto/Roboto-Bold.ttf
+
+    - family: RobotoRegular
+      fonts:
+        - asset: assets/font/Roboto/Roboto-Regular.ttf
