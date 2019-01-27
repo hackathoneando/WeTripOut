@@ -33,5 +33,5 @@ class Session {
     }
     return false;
   }
-  
+
 }
