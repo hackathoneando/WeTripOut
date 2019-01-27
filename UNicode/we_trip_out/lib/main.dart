@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:we_trip_out/ui/home_screen.dart';
-import 'package:we_trip_out/ui/login_screen.dart';
+import 'package:we_trip_out/ui/home/home_screen.dart';
+import 'package:we_trip_out/ui/login/login_screen.dart';
 
 void main() => runApp(MyApp());
 
