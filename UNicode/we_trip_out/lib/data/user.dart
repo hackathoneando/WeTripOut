@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'trip.dart';
 
 class User {
-  int id;
+  String id;
   String name;
   DateTime bornDate;
   FirebaseUser firebaseUser;
@@ -13,8 +13,7 @@ class User {
   User.connect({this.firebaseUser}) {
     List<DocumentSnapshot> documents;
     Firestore.instance
-        .collection('users')
-        .where('email', isEqualTo: firebaseUser.email)
+        .collection('users/'+id)
         .getDocuments()
         .then((value) => documents = value.documents);
 
