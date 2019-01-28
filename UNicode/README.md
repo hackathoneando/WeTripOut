@@ -21,7 +21,7 @@ In our product we end up with flutter developed application for both iOS and And
   * Results:
   We connect the app to firebase and add some functionality in the model with Auth and firestore, later we would like to implement the cloud functions to serve information that is difficult to process in the client.
 
-### Note: To sign in to the app use the credentials belo, or create a new account with a valid email and password(the app doesn't verify for the validity of the cretendials now, but it can be add later).
+### Note: To sign in to the app use the credentials belo, or create a new account with a valid email and password(the app doesn't verify for the validity of the cretendials now, but it can be added later), also firebase verify for the validity and can throw an exception when the email is malformed or the pasword is too short(less than 6 characters).
   * email: AndrewHertz98@gmail.com
   * pasword: thePassw0rd
   
