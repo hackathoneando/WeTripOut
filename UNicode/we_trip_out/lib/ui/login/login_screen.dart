@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:we_trip_out/style/theme.dart' as Theme;
 import 'package:we_trip_out/utils/bubble_indication_painter.dart';
+import '../../data/session.dart';
+import '../home/home_screen.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key}) : super(key: key);
@@ -13,7 +15,6 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage>
     with SingleTickerProviderStateMixin {
-
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   final FocusNode myFocusNodeEmailLogin = FocusNode();
@@ -33,7 +34,8 @@ class _LoginPageState extends State<LoginPage>
   TextEditingController signupEmailController = new TextEditingController();
   TextEditingController signupNameController = new TextEditingController();
   TextEditingController signupPasswordController = new TextEditingController();
-  TextEditingController signupConfirmPasswordController = new TextEditingController();
+  TextEditingController signupConfirmPasswordController =
+  new TextEditingController();
 
   PageController _pageController;
 
@@ -50,9 +52,18 @@ class _LoginPageState extends State<LoginPage>
         },
         child: SingleChildScrollView(
           child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height >= 775.0
-                ? MediaQuery.of(context).size.height
+            width: MediaQuery
+                .of(context)
+                .size
+                .width,
+            height: MediaQuery
+                .of(context)
+                .size
+                .height >= 775.0
+                ? MediaQuery
+                .of(context)
+                .size
+                .height
                 : 775.0,
             decoration: new BoxDecoration(
               gradient: new LinearGradient(
@@ -328,8 +339,7 @@ class _LoginPageState extends State<LoginPage>
                             fontFamily: "WorkSansBold"),
                       ),
                     ),
-                    onPressed: () =>
-                        showInSnackBar("Login button pressed")),
+                    onPressed: _signIn),
               ),
             ],
           ),
@@ -625,14 +635,32 @@ class _LoginPageState extends State<LoginPage>
                             fontFamily: "WorkSansBold"),
                       ),
                     ),
-                    onPressed: () =>
-                        showInSnackBar("SignUp button pressed")),
+                    onPressed: () => showInSnackBar("SignUp button pressed")),
               ),
             ],
           ),
         ],
       ),
     );
+  }
+
+  void _signIn() {
+    if (loginEmailController.text != "" && loginPasswordController.text != "") {
+      Session().authenticateSession(email: loginEmailController.text,
+          password: loginPasswordController.text).then((result) {
+            print("in result");
+        if(result) {
+          print("option 1");
+          Navigator.pop(context);
+          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+        } else {
+          print("option 2");
+          loginEmailController.clear();
+          loginPasswordController.clear();
+        }
+        print("out result");
+      });
+    }
   }
 
   void _onSignInButtonPress() {
@@ -663,4 +691,3 @@ class _LoginPageState extends State<LoginPage>
     });
   }
 }
-

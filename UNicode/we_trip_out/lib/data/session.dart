@@ -14,7 +14,8 @@ class Session {
   Future<bool> authenticateSession({String email, String password}) async {
     FirebaseUser firebaseUser = await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: email, password: password);
-    if (firebaseUser == null) {
+    if (firebaseUser != null) {
+      print("User logged");
       user = User.connect(firebaseUser: firebaseUser);
       return true;
     }
