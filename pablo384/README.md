@@ -2,7 +2,7 @@
 Carpeta exclusiva para pablo384. Aquí subirán todo el código y los archivos que consideren necesarios, por medio de un Pull Request.
 [Original Repo](https://github.com/pablo384/WeTripOut)
 #APK
-[Download APK](./app/app.apk)
+[Download APK](https://github.com/pablo384/WeTripOut/blob/master/app.apk)
 ##Notas:
 - Link al compartir viaje es el de mi pagina web https://pablo384.com devido a que no tuve tiempo para preparar el Server Side Rendering en https://trip.pablo384.com.
 
