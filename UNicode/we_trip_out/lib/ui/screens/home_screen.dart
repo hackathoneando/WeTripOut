@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:we_trip_out/ui/screens/body_screens/home/home_body.dart';
 import 'package:we_trip_out/ui/screens/body_screens/profile/profile_body.dart';
+import 'package:we_trip_out/ui/screens/body_screens/recommended/recommended-body.dart';
 
 class HomeScreen extends StatefulWidget{
   HomeScreen({Key key}) : super(key: key);
@@ -13,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final _widgetOptions = [
     Text('Index 0: My Trips'),
-    new HomeBody(),
+    new RecommendedBody(),
     new HomeBody(),
     Text('Index 3: Notifications'),
     new ProfileBody(),
