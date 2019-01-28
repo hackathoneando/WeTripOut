@@ -13,8 +13,7 @@ class User {
   User.connect({this.firebaseUser}) {
     List<DocumentSnapshot> documents;
     Firestore.instance
-        .collection('users')
-        .where('email', isEqualTo: firebaseUser.email)
+        .collection('users/'+firebaseUser.uid)
         .getDocuments()
         .then((value) => documents = value.documents);
 
