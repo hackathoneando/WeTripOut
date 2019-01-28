@@ -22,14 +22,14 @@ class Session {
     return false;
   }
 
-  Future<bool> createUser({String email, String password}) async {
+  Future<bool> createUser({String email, String password, String name}) async {
     List<DocumentSnapshot> documents = (await Firestore.instance
             .collection('users')
             .where('email', isEqualTo: email)
             .getDocuments())
         .documents;
     if (documents.isEmpty) {
-      user = User.create(email: email, password: password);
+      user = User.create(email: email, password: password, name: name);
       return true;
     }
     return false;

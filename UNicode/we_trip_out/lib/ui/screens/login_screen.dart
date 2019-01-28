@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage>
   TextEditingController signupNameController = new TextEditingController();
   TextEditingController signupPasswordController = new TextEditingController();
   TextEditingController signupConfirmPasswordController =
-  new TextEditingController();
+      new TextEditingController();
 
   PageController _pageController;
 
@@ -52,18 +52,9 @@ class _LoginPageState extends State<LoginPage>
         },
         child: SingleChildScrollView(
           child: Container(
-            width: MediaQuery
-                .of(context)
-                .size
-                .width,
-            height: MediaQuery
-                .of(context)
-                .size
-                .height >= 775.0
-                ? MediaQuery
-                .of(context)
-                .size
-                .height
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height >= 775.0
+                ? MediaQuery.of(context).size.height
                 : 775.0,
             decoration: new BoxDecoration(
               gradient: new LinearGradient(
@@ -635,7 +626,7 @@ class _LoginPageState extends State<LoginPage>
                             fontFamily: "WorkSansBold"),
                       ),
                     ),
-                    onPressed: () => showInSnackBar("SignUp button pressed")),
+                    onPressed: _signUp),
               ),
             ],
           ),
@@ -645,20 +636,51 @@ class _LoginPageState extends State<LoginPage>
   }
 
   void _signIn() {
+    //TODO assert the text controllers
     if (loginEmailController.text != "" && loginPasswordController.text != "") {
-      Session().authenticateSession(email: loginEmailController.text,
-          password: loginPasswordController.text).then((result) {
-            print("in result");
-        if(result) {
-          print("option 1");
+      Session()
+          .authenticateSession(
+              email: loginEmailController.text,
+              password: loginPasswordController.text)
+          .then((result) {
+        if (result) {
+          print("Correct signin data");
           Navigator.pop(context);
-          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => HomeScreen()));
         } else {
-          print("option 2");
+          print("The data doesn't exists in the db");
           loginEmailController.clear();
           loginPasswordController.clear();
         }
-        print("out result");
+      });
+    }
+  }
+
+  void _signUp() {
+    //TODO assert the text controller
+    if (signupEmailController.text != "" &&
+        signupNameController.text != "" &&
+        signupPasswordController.text != "" &&
+        signupConfirmPasswordController.text == signupPasswordController.text) {
+      Session()
+          .createUser(
+              email: signupEmailController.text,
+              password: signupPasswordController.text,
+              name: signupNameController.text)
+          .then((result) {
+        if (result) {
+          print("Correct signup data");
+          Navigator.pop(context);
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => HomeScreen()));
+        } else {
+          print("It seems like the user already exists");
+          signupEmailController.clear();
+          signupNameController.clear();
+          signupPasswordController.clear();
+          signupConfirmPasswordController.clear();
+        }
       });
     }
   }
