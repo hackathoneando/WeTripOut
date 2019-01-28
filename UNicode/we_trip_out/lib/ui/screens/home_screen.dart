@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:we_trip_out/ui/screens/body_screens/home/home_body.dart';
-import 'package:we_trip_out/ui/screens/body_screens/home/home_list_body.dart';
 import 'package:we_trip_out/ui/screens/body_screens/profile/profile_body.dart';
 
 class HomeScreen extends StatefulWidget{
@@ -14,10 +13,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final _widgetOptions = [
     Text('Index 0: My Trips'),
-    new HomeList(),
+    new HomeBody(),
     new HomeBody(),
     Text('Index 3: Notifications'),
-    new ProfileScreen(),
+    new ProfileBody(),
   ];
 
   int _selectedIndex = 2;

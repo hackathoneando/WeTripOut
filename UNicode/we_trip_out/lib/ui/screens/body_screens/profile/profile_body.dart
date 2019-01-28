@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:we_trip_out/ui/screens/body_screens/home/home_list_body.dart';
 
-class ProfileScreen extends StatefulWidget{
+class ProfileBody extends StatefulWidget{
   @override
-  State<StatefulWidget> createState() => _ProfileScreenState();
+  State<StatefulWidget> createState() => _ProfileBodyState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen>{
+class _ProfileBodyState extends State<ProfileBody>{
 
   var profilePicture = Icons.account_circle;
   var name = Text(
@@ -18,61 +18,70 @@ class _ProfileScreenState extends State<ProfileScreen>{
   );
   var travels = 0;
   var friends = 0;
+  final topBar = new AppBar(
+    backgroundColor: new Color(0xff559AAF),
+    elevation: 3.5,
+    title: Center(child: Text('My profile')),
+  );
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Container(
+    return Scaffold(
+      appBar: topBar,
+      body: Container(
+        child: Column(
+          children: <Widget>[
+            Container(
               child: Icon(
                 profilePicture,
                 size: 200,
               ),
-          ),
-          Center(
-            child: Container(
-              child: name,
             ),
-          ),
-          Container(
-            margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: OutlineButton(
-                    color: Colors.white70,
-                    shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(0.0)),
-                    child: Center(
-                      child: Text(
-                        '$travels Travels',
-                      ),
-                    ),
-                    onPressed: (){},
-                  )
-                ),
-                Expanded(
-                    child: OutlineButton(
-                      color: Colors.white70,
-                      shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(0)),
-                      child: Center(
-                        child: Text(
-                          '$friends Friends',
+            Center(
+              child: Container(
+                child: name,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                      child: OutlineButton(
+                        color: Colors.white70,
+                        shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(0.0)),
+                        child: Center(
+                          child: Text(
+                            '$travels Travels',
+                          ),
                         ),
-                      ),
-                      onPressed: (){},
-                    )
-                ),
-              ],
+                        onPressed: (){},
+                      )
+                  ),
+                  Expanded(
+                      child: OutlineButton(
+                        color: Colors.white70,
+                        shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(0)),
+                        child: Center(
+                          child: Text(
+                            '$friends Friends',
+                          ),
+                        ),
+                        onPressed: (){},
+                      )
+                  ),
+                ],
+              ),
             ),
-          ),
-          Container(
-            height: 225,
-            child: new HomeList(),
-          )
-        ],
+            Container(
+              height: 225,
+              child: new HomeList(),
+            )
+          ],
+        ),
       ),
     );
+
   }
 
 }
