@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:we_trip_out/ui/screens/body_screens/home/home_list_body.dart';
 
-class ProfileScreen extends StatelessWidget{
+class ProfileScreen extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen>{
 
   var profilePicture = Icons.account_circle;
   var name = Text(
@@ -60,7 +66,10 @@ class ProfileScreen extends StatelessWidget{
               ],
             ),
           ),
-
+          Container(
+            height: 225,
+            child: new HomeList(),
+          )
         ],
       ),
     );
