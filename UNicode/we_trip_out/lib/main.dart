@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:we_trip_out/ui/screens/home_screen.dart';
+import 'ui/screens/login_screen.dart';
 
 void main() => runApp(MyApp());
 

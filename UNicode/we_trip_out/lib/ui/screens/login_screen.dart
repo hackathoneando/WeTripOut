@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:we_trip_out/style/theme.dart' as Theme;
 import 'package:we_trip_out/utils/bubble_indication_painter.dart';
 import '../../data/session.dart';
-import '../home/home_screen.dart';
+import 'home_screen.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key}) : super(key: key);
