@@ -10,7 +10,7 @@ class _HomeListState extends State<HomeList>{
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: EdgeInsets.all(0.0),
-      itemExtent: 151.0,
+      itemExtent: 143.0,
       itemBuilder: (BuildContext context, int index) {
         var card = new CardList();
         //card.setIndex(index);
@@ -45,6 +45,7 @@ class _CardListState extends State<CardList> {
                 children: <Widget>[
                   Container(
                     child: Icon(Icons.account_circle, size: 35,),
+                    margin: EdgeInsets.all(10),
                   ),
                   Container(
                     child: Text(
@@ -59,35 +60,46 @@ class _CardListState extends State<CardList> {
               )
             ),
             Container(
+              margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
               child: Text("$message"),
             ),
             Container(
+              margin: EdgeInsets.fromLTRB(15, 0, 0, 0),
               child: Row(
                 children: <Widget>[
-                  Container(
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.favorite,
-                        color: Color(0xff828282),
-                      ),
-                      onPressed: () { setState(() {likes+=1;});},
+                  Expanded(
+                    child: Row(
+                      children: <Widget>[
+                        IconButton(
+                          icon: Icon(
+                            Icons.favorite,
+                            color: Color(0xff828282),
+                          ),
+                          onPressed: () { setState(() {likes+=1;});},
+                        ),
+                        Text(
+                          '$likes Travelikes!',
+                        ),
+                      ],
                     ),
                   ),
-                  Text(
-                    '$likes Travelikes!',
-                  ),
-                  Container(
-                    child: new IconButton(
-                      icon: Icon(
-                        Icons.comment,
-                        color: Color(0xff828282),
-                      ),
-                      onPressed: () { setState(() {comments+=1;});},
-                    ),
-                  ),
-
-                  Text(
-                    '$comments Comments',
+                  Expanded(
+                      child: Row(
+                        children: <Widget>[
+                          Container(
+                            child: new IconButton(
+                              icon: Icon(
+                                Icons.comment,
+                                color: Color(0xff828282),
+                              ),
+                              onPressed: () { setState(() {comments+=1;});},
+                            ),
+                          ),
+                          Text(
+                            '$comments Comments',
+                          ),
+                        ],
+                      )
                   ),
                 ],
               ),
