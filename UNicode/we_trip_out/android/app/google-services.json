@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "796646060690",
+    "firebase_url": "https://backendunicode-722c2.firebaseio.com",
+    "project_id": "backendunicode-722c2",
+    "storage_bucket": "backendunicode-722c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796646060690:android:fcb73b83ada28989",
+        "android_client_info": {
+          "package_name": "com.example.wetripout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796646060690-bi0hpj6a6751lun7lc5bko2lrm5uuhca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3VUPuLN3ohBIOIzmaW3OGxPw3MFR3gtw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
